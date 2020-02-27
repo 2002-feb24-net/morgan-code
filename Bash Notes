@@ -1,0 +1,51 @@
+bash is a shell program that lets us run many programs using a text-based interface.
+
+[command/program] ([subcommands]) (options)
+
+command/program: mkdir, dotnet, git
+
+subcommands: push, pull
+
+options: --, -r, -m "", -o
+
+ex. dotnet new console (--output-dir/ -o) HelloWorld
+
+
+To retrieve information
+1. git clone ..........
+2. git pull
+
+
+git is used as a Version Control System (VCS) or Source Control Management Tool
+
+repository = a folder that git takes control of. 
+It contains:
+.git folder
+regular_files
+
+1. make changes to repo
+2a. [git add <path>](record those changes in git locally)
+2b. [git commit -m "description of changes"]
+3. [git push](upload the recorded changes to remote (github))
+
+git init (used to also create a repository)
+
+
+
+echo: writes in arguments to standard output
+which: locate a program file in the user's path
+grep: searches words or strings in a text file
+find: used to find a file
+cat: used with text files- displays, combines copies, and creates new ones
+
+ctrl+c is used to cancel whatever command is happening in the terminal
+
+PATH is an environment variable: which folders on the drive shows what can be run
+$ used to call variables
+| takes the output of the left side and uses it for the right side
+> redirects the information (overwrites)
+>> appends the information (adds to the end)
+* 0 or more of any character
+bash keeps history of all your typed commands
+tab completion: push tab to help complete the directory name
+tab completion 2: push tab twice to list the options of child directories
