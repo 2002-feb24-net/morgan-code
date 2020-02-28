@@ -1,0 +1,11 @@
+C:\Revature\Acronym\bin\Debug\netcoreapp3.1\Acronym.exe
+C:\Revature\Acronym\bin\Debug\netcoreapp3.1\Acronym.deps.json
+C:\Revature\Acronym\bin\Debug\netcoreapp3.1\Acronym.runtimeconfig.json
+C:\Revature\Acronym\bin\Debug\netcoreapp3.1\Acronym.runtimeconfig.dev.json
+C:\Revature\Acronym\bin\Debug\netcoreapp3.1\Acronym.dll
+C:\Revature\Acronym\bin\Debug\netcoreapp3.1\Acronym.pdb
+C:\Revature\Acronym\obj\Debug\netcoreapp3.1\Acronym.csprojAssemblyReference.cache
+C:\Revature\Acronym\obj\Debug\netcoreapp3.1\Acronym.AssemblyInfoInputs.cache
+C:\Revature\Acronym\obj\Debug\netcoreapp3.1\Acronym.AssemblyInfo.cs
+C:\Revature\Acronym\obj\Debug\netcoreapp3.1\Acronym.dll
+C:\Revature\Acronym\obj\Debug\netcoreapp3.1\Acronym.pdb
