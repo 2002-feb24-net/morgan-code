@@ -21,7 +21,8 @@ namespace RockPaperScissors
 
             string computersMove = SetCompChoice();
 
-            System.Console.WriteLine("Computer chose " + computersMove);
+            System.Console.WriteLine("You: " + input);
+            System.Console.WriteLine("Computer: " + computersMove);
 
             if (input == computersMove)
             {
@@ -79,8 +80,7 @@ namespace RockPaperScissors
                     }
                 }
             }
-            System.Console.WriteLine("=========================================================================================");
-            System.Console.WriteLine("");
+            System.Console.WriteLine("___________________________________________________________________________________________" + "\n\n");
         }
 
         public void PrintSummary()
