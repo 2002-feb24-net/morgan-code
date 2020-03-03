@@ -16,7 +16,7 @@ namespace RockPaperScissors
             System.Console.WriteLine("");
             int roundNumber = userWins + compWins + ties + 1;
             System.Console.WriteLine("Game " + roundNumber);
-            System.Console.WriteLine("Enter 'rock', 'paper', or 'scissors'...?");
+            System.Console.WriteLine("Enter 'rock', 'paper', or 'scissors'.");
             string input = Console.ReadLine();
 
             string computersMove = SetCompChoice();

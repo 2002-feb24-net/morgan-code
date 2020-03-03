@@ -17,7 +17,7 @@ namespace RockPaperScissors
                 string input = Console.ReadLine();
 
 
-                if (input == "n" || input =="no")
+                if (input == "n" || input == "no")
                 {
                     readyToQuit = true;
                 }
