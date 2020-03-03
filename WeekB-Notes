@@ -1,0 +1,11 @@
+Class/Object - Related data and logic/behavior
+
+static - does not require an object instance. 1 copy of that thing for the whole program
+
+non-static/instance - exist on one particular object at a time. Can have many of these  
+
+access modifiers: 
+    public - can set them as public instead
+    private - private by deafult
+
+DRY principle: Don't repeat yourself
