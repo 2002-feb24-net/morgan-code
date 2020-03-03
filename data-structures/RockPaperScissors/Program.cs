@@ -13,7 +13,7 @@ namespace RockPaperScissors
 
             while (!readyToQuit)
             {
-                System.Console.WriteLine("Do you want to play a game...? (y/n)");
+                System.Console.Write("Do you want to play a game...? (y/n): ");
                 string input = Console.ReadLine();
 
 

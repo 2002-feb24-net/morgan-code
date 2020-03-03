@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace RockPaperScissors
 {
@@ -10,13 +11,15 @@ namespace RockPaperScissors
         int compWins = 0;
         int ties = 0;
         int gamesPlayed = 0;
+        List<string> roundResults = new List<string>();
 
         public void PlayRound()
         {
             System.Console.WriteLine("");
-            int roundNumber = userWins + compWins + ties + 1;
+            int roundNumber = roundResults.Count + 1;
+            
             System.Console.WriteLine("Game " + roundNumber);
-            System.Console.WriteLine("Enter 'rock', 'paper', or 'scissors'.");
+            System.Console.Write("Enter 'rock', 'paper', or 'scissors': ");
             string input = Console.ReadLine();
 
             string computersMove = SetCompChoice();
@@ -28,6 +31,7 @@ namespace RockPaperScissors
             {
                 ties++;
                 gamesPlayed++;
+                roundResults.Add("tie");
                 Console.WriteLine("tie game.");
             }
             else
@@ -38,12 +42,14 @@ namespace RockPaperScissors
                     {
                         userWins++;
                         gamesPlayed++;
+                        roundResults.Add("win");
                         System.Console.WriteLine("Nice job!");
                     }
                     else if(computersMove == "paper")
                     {   
                         compWins++;
                         gamesPlayed++;
+                        roundResults.Add("loss");
                         System.Console.WriteLine("Loser!");
                     }
                 }
@@ -54,12 +60,14 @@ namespace RockPaperScissors
                     {
                         userWins++;
                         gamesPlayed++;
+                        roundResults.Add("win");
                         System.Console.WriteLine("Nice job!");
                     }
                     else if(computersMove == "scissors")
                     {   
                         compWins++;
                         gamesPlayed++;
+                        roundResults.Add("loss");
                         System.Console.WriteLine("Loser!");
                     }
                 }
@@ -70,12 +78,14 @@ namespace RockPaperScissors
                     {
                         userWins++;
                         gamesPlayed++;
+                        roundResults.Add("win");
                         System.Console.WriteLine("Nice job!");
                     }
                     else if(computersMove == "rock")
                     {   
                         compWins++;
                         gamesPlayed++;
+                        roundResults.Add("loss");
                         System.Console.WriteLine("Loser!");
                     }
                 }
@@ -86,6 +96,12 @@ namespace RockPaperScissors
         public void PrintSummary()
         {
             System.Console.WriteLine("User Wins: " + userWins + "\n" + "Computer Wins: " + compWins + "\n" + "Games Tied: " + ties +"\n" + "Games Played: " + gamesPlayed);
+                    
+            foreach (string result in roundResults)
+            {
+                System.Console.WriteLine(result + " ");
+            }
+            System.Console.WriteLine();
         }
 
         string SetCompChoice()
