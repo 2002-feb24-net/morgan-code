@@ -9,13 +9,13 @@ namespace RockPaperScissors
         int userWins = 0;
         int compWins = 0;
         int ties = 0;
-        int gamesPlayed = 1;
+        int gamesPlayed = 0;
 
         public void PlayRound()
         {
             System.Console.WriteLine("");
             int roundNumber = userWins + compWins + ties + 1;
-            System.Console.WriteLine("Game " + gamesPlayed);
+            System.Console.WriteLine("Game " + roundNumber);
             System.Console.WriteLine("Enter 'rock', 'paper', or 'scissors'...?");
             string input = Console.ReadLine();
 
@@ -85,7 +85,7 @@ namespace RockPaperScissors
 
         public void PrintSummary()
         {
-            System.Console.WriteLine("User Wins: " + userWins + "\n" + "Computer Wins: " + compWins + "\n" + "Games Played: " + gamesPlayed);
+            System.Console.WriteLine("User Wins: " + userWins + "\n" + "Computer Wins: " + compWins + "\n" + "Games Tied: " + ties +"\n" + "Games Played: " + gamesPlayed);
         }
 
         string SetCompChoice()
