@@ -9,22 +9,26 @@ namespace RockPaperScissors
             //RockPaperScissorsGame game = new RockPaperScissorsGame();
 
             bool readyToQuit = false;
-            RockPaperScissors game = new RockPaperScissors();
+            var game = new RockPaperScissors();
 
             while (!readyToQuit)
             {
                 System.Console.Write("Do you want to play a game...? (y/n): ");
-                string input = Console.ReadLine();
+                string input = Console.ReadLine().ToLower();
 
 
                 if (input == "n" || input == "no")
                 {
                     readyToQuit = true;
                 }
-                else
+                else if (input == "y" || input == "yes")
                 {
                     game.PlayRound();
                     //play a round and print the result 
+                }
+                else
+                {
+                    System.Console.WriteLine("you must choose...");
                 }
             }
 

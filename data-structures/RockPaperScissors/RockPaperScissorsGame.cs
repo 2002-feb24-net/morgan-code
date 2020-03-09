@@ -20,7 +20,7 @@ namespace RockPaperScissors
             
             System.Console.WriteLine("Game " + roundNumber);
             System.Console.Write("Enter 'rock', 'paper', or 'scissors': ");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine().ToLower();
 
             string computersMove = SetCompChoice();
 
@@ -96,7 +96,7 @@ namespace RockPaperScissors
         public void PrintSummary()
         {
             System.Console.WriteLine("User Wins: " + userWins + "\n" + "Computer Wins: " + compWins + "\n" + "Games Tied: " + ties +"\n" + "Games Played: " + gamesPlayed);
-                    
+ 
             foreach (string result in roundResults)
             {
                 System.Console.WriteLine(result + " ");

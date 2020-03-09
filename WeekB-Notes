@@ -9,3 +9,57 @@ access modifiers:
     private - private by deafult
 
 DRY principle: Don't repeat yourself
+
+List 
+    generic
+    ordered
+    can have duplicates (value and reference)
+    can change size
+    based on array
+    slow to search 
+    O(n)
+
+HashSet
+    generic
+    unordered
+    does not allow duplicates
+    can change size
+    based on hash table
+    fast to search/check membership
+    O(1)
+
+Hash table
+    need a hash function
+
+Constructors
+    Every class always has at least one Constructors
+    if we do not write one ourselves, there is an automatic "default constructor"
+    public Matrix(){}
+
+Recursive method: (base case/non-recurssive case)
+    if problem is simple:
+        return answer directly
+    otherwise: (recursive case)
+        break down the problem to piece(s) that are closer to the base case
+        call this method again(the recursion itself) to solve that simpler case
+
+Properties
+    like a field because it stores data, like a method because we can write different logic within
+    inside a property, we can create "get" and "set"
+    inside a property setter, you have a special keyword "value" which is what the code setting the property put to the right of the equals setting
+    things we can do with properties:
+        get-only property with a backing field
+        get-only property with some constant value
+        property based on one field, with validation in set
+        property based on serveral fields
+        auto-implemented property (auto-property)
+            creates a hidden private backing field
+            in c#, it's bad practice to ever have public fields
+var
+    can be used for local variables
+Dictionary: Dictionary<key, value>;
+    unordered
+    no duplicatesfast
+
+
+O(n) notation:
