@@ -29,7 +29,7 @@ namespace PersonList
 
         public void CheckDuplicate()
         {
-            if ()
+            //if person already exists, console.write("this person already exists")
         }
     }
 }
