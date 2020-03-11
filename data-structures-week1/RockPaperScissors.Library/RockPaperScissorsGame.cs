@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace RockPaperScissors
+namespace RockPaperScissors.Library
 {
-    class RockPaperScissors
+    public class RockPaperScissorsGame
     {
 
         string compChoice = null;
@@ -11,13 +12,25 @@ namespace RockPaperScissors
         int compWins = 0;
         int ties = 0;
         int gamesPlayed = 0;
+
+        //we use interface types to allow for flexibility in our code
+        // I need some input and output but I don't care how
+        IInputterOutputter _io; //filled in by the constructor
+    
         List<string> roundResults = new List<string>();
+
+        // constructor
+        public RockPaperScissorsGame(IInputterOutputter io)
+        {
+            _io = io;
+            // we're using a principle called dependency inversion here
+        }
 
         public void PlayRound()
         {
             System.Console.WriteLine("");
             int roundNumber = roundResults.Count + 1;
-            
+
             System.Console.WriteLine("Game " + roundNumber);
             System.Console.Write("Enter 'rock', 'paper', or 'scissors': ");
             string input = Console.ReadLine().ToLower();
@@ -93,6 +106,15 @@ namespace RockPaperScissors
             System.Console.WriteLine("___________________________________________________________________________________________" + "\n\n");
         }
 
+        private void Output(string str)
+        {
+            _io.Output(str);
+        }
+
+        private string Input(string str)
+        {
+            return _io.Input();
+        }
         public void PrintSummary()
         {
             System.Console.WriteLine("User Wins: " + userWins + "\n" + "Computer Wins: " + compWins + "\n" + "Games Tied: " + ties +"\n" + "Games Played: " + gamesPlayed);

@@ -93,9 +93,16 @@ namespace RockPaperScissors
             System.Console.WriteLine("___________________________________________________________________________________________" + "\n\n");
         }
 
+        private void Output(string str)
+        {
+            Console.WriteLine(str);
+        }
+
         public void PrintSummary()
         {
             System.Console.WriteLine("User Wins: " + userWins + "\n" + "Computer Wins: " + compWins + "\n" + "Games Tied: " + ties +"\n" + "Games Played: " + gamesPlayed);
+
+            string output = "";
  
             foreach (string result in roundResults)
             {
