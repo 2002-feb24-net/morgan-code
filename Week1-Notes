@@ -1,0 +1,7 @@
+Serialization
+    custom binary (extra work, more error prone, but better if you really need the space)
+    XML (human readable)
+    JSON 
+
+(serialization) C# objects => JSON string => write that to a file 
+(deserialization/parsing) read from the file => JSON string => C# objects
