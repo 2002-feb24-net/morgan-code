@@ -28,7 +28,16 @@ namespace Serialization
 
                 string json = ConvertToJson(data);
 
-                WriteToFile(json, filePath);
+                try
+                {
+                    WriteToFile(json, filePath);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Fatal error");
+                    Console.WriteLine(ex.Message);
+                    return;
+                }
             }
             else
             {
@@ -41,16 +50,34 @@ namespace Serialization
 
             string json2 = ConvertToJson(data);
 
-            WriteToFile(json2, filePath);
+            try
+            {
+                WriteToFile(json2, filePath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Fatal error");
+                Console.WriteLine(ex.Message);
+                return;
+            }
 
         }
 
         private static string ReadFromFile(string filePath)
         {
-            var sr = new StreamReader(filePath);
+            //using statement is the same as try/finally/not null/dispose, but way quicker to write and look at
+            //using (var sr = new StreamReader(filePath))
+            //{
+            //    string text = sr.ReadToEnd();
+            //    sr.Close();
+            //    return text;
+            //}
+
+            // newer, using statement
+            using var sr = new StreamReader(filePath);
             string text = sr.ReadToEnd();
-            sr.Close();
             return text;
+            // (sr is disposed when this block ends, when this method returns)
         }
 
         private static void ModifyPersons(List<Person> data)
@@ -64,11 +91,42 @@ namespace Serialization
 
         private static void WriteToFile(string text, string path)
         {
-            var file = new FileStream(path, FileMode.Create);
-            byte[] data = Encoding.UTF8.GetBytes(text);
 
-            file.Write(data);
-            file.Close();
+            // exception handling is important for good user experience
+            // as well as data correctness etc
+
+            // opening a file is something that definitely could go wrong
+            // it's code that we expect to sometimes throw an exception
+            // any code like that, we should put in a try {} block
+
+            FileStream file = null;
+            try
+            {
+                var file = new FileStream(path, FileMode.Create);
+                byte[] data = Encoding.UTF8.GetBytes(text);
+
+                file.Write(data);
+            }
+            //catch
+            //{
+            //    // we can catch ANY exception... this is bad practice
+            //}
+            catch (UnauthorizedAccessException ex)
+            {
+                // useful properties of the exception: 
+                // Message, StackTrace, InnerException
+                Console.WriteLine($"Access to file {path} is not allowed by the OS");
+                Console.WriteLine(ex.Message);
+                throw; //rethrows the exception to be caught again higher up in the call stack
+            }
+            finally
+            {
+                if (file != null)
+                {
+                    //file.Close();
+                    file.Dispose();
+                }
+            }
         }
 
         static string ConvertToJson(List<Person> data)
