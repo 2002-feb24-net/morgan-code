@@ -16,11 +16,12 @@ namespace RockPaperScissors.Library
         //we use interface types to allow for flexibility in our code
         // I need some input and output but I don't care how
         IInputterOutputter _io; //filled in by the constructor
+        IRPSStrategy _strategy;
     
         List<string> roundResults = new List<string>();
 
         // constructor
-        public RockPaperScissorsGame(IInputterOutputter io)
+        public RockPaperScissorsGame(IInputterOutputter io, IRPSStrategy strategy)
         {
             _io = io;
             // we're using a principle called dependency inversion here
