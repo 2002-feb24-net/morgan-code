@@ -4,7 +4,8 @@ const lowOrHi = document.querySelector('.lowOrHi');
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
 
-// add an event listener that will get called when the user "clicks" the 
+// add an event listener that will get called when the user "clicks" the
++
 guessSubmit.addEventListener('click', checkGuess);
 
 let guessCount = 1;
@@ -46,5 +47,5 @@ function checkGuess(){
     }
     guessCount++; // increment the turns taken
     guessField.value = '';
-    
+
 }
